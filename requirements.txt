@@ -1,0 +1,5 @@
+streamlit         >=1.33
+sentence-transformers==2.6.1
+pandas>=2.2
+numpy>=1.26
+regex
