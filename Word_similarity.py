@@ -1,5 +1,4 @@
 from sentence_transformers import SentenceTransformer, util
-import torch
 import numpy as np
 import re
 import pandas as pd
@@ -118,7 +117,7 @@ def do_it_all_similarity_df_out_wordwise(sentence_arr,columnnames = ['Sentence_1
     sentence_arr_arr = convert_array_of_sentences_to_words(sentence_arr)
     sentence_bigarr, poss = convert_array_of_arrays_to_big_array(sentence_arr_arr)
     emb  = model.encode(sentence_bigarr, convert_to_tensor=True, normalize_embeddings=True)
-    print('df_w loaded')
+    print('df_wordwise loaded')
     result = get_list_of_compared_sentences_wordwise(emb,poss)
     result = attach_sentences_to_long_sim_df(sentence_arr,result,columnnames)
     return result
@@ -137,12 +136,14 @@ def do_it_all_similarity_df_out_both(sentence_arr,columnnames = ['Sentence_1','S
     df_s = get_list_of_compared_sentences_sentencewise(model.encode(sentence_arr, convert_to_tensor=True, normalize_embeddings=True))
     df_s = convert_nxn_array_to_long_df(df_s,['Dummy 1','Dummy 2',valuename_s])
 
-    print('df_s loaded')
+    print('df_sentencewise loaded')
     df_w = do_it_all_similarity_df_out_wordwise(sentence_arr,columnnames_wordwise)
     df_out = df_w.merge(df_s,left_on=[columnnames_wordwise[2],columnnames_wordwise[3]], right_on = ['Dummy 1', 'Dummy 2'])
     del df_out['Dummy 1'], df_out['Dummy 2']
     return df_out
 
+
+#Test block - not part of main script - to output pub names run Get_Pub_Similarity.py
 if __name__ == '__main__':
     # Test 1: simple words
     words = ["cat", "dog", "happy"] 
@@ -187,17 +188,19 @@ if __name__ == '__main__':
     del result3['Sentence_1'], result3['Sentence_2']
     print(result3)
 
-    csv_path = r"Other\pub_names.csv"
+    csv_path = r"Pub Names\pub_names.csv"
     df = pd.read_csv(csv_path,
                     encoding="latin1",     # or "cp1252"
                     sep=",",               # keep default comma separator
                     engine="python")       # more forgiving parser 
-    csv_out = r'Other\pub_names_similarity_scores.csv'
-    df = df.drop_duplicates(['Name']).reset_index()
+    csv_out = r'Pub Names\pub_names_similarity_scores.csv'
+    df = df.drop_duplicates(['Name']).reset_index().head(5)
     print(df)
     df = do_it_all_similarity_df_out_both(df['Name'],columnnames=['Pub_Name_1','Pub_Name_2','Pub_Name_1_ID','Pub_Name_2_ID','Similarity_Score_Sentencewise','Similarity_Score_Wordwise'])
-    df.to_csv(csv_out, index=False, encoding="utf-8")
+    # df.to_csv(csv_out, index=False, encoding="utf-8")
 
+
+    # Bonus - game guess the quote (from Pride and Prejudice)
     quote_list = [
         '''I'm quite put out!''',
         '''I am most seriously displeased!''',
