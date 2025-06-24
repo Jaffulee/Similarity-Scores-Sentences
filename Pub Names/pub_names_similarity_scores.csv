@@ -1,0 +1,26 @@
+Pub_Name_1_ID,Pub_Name_2_ID,Similarity_Score_Wordwise,Pub_Name_1,Pub_Name_2,Similarity_Score_Sentencewise
+0,0,1.0,Evans & Peel Detective Agency,Evans & Peel Detective Agency,1.0
+0,1,0.3561626300215721,Evans & Peel Detective Agency,Melton Mowbray & District Indoor Bowls Club,0.0712897926568985
+0,2,0.2820861339569092,Evans & Peel Detective Agency,Rushden Historic Transport Society,0.063576340675354
+0,3,0.24970396980643272,Evans & Peel Detective Agency,Yr Ieuan Ap Iago,-0.00013273581862449646
+0,4,0.2857041507959366,Evans & Peel Detective Agency,Hostel of God Begot,0.13986696302890778
+1,0,0.3561626300215721,Melton Mowbray & District Indoor Bowls Club,Evans & Peel Detective Agency,0.0712897926568985
+1,1,1.0,Melton Mowbray & District Indoor Bowls Club,Melton Mowbray & District Indoor Bowls Club,1.0
+1,2,0.3007973258694013,Melton Mowbray & District Indoor Bowls Club,Rushden Historic Transport Society,0.17325109243392944
+1,3,0.25824301689863205,Melton Mowbray & District Indoor Bowls Club,Yr Ieuan Ap Iago,0.038599975407123566
+1,4,0.3488463908433914,Melton Mowbray & District Indoor Bowls Club,Hostel of God Begot,0.17639490962028503
+2,0,0.2820861339569092,Rushden Historic Transport Society,Evans & Peel Detective Agency,0.063576340675354
+2,1,0.3007973258694013,Rushden Historic Transport Society,Melton Mowbray & District Indoor Bowls Club,0.17325109243392944
+2,2,1.0,Rushden Historic Transport Society,Rushden Historic Transport Society,1.0
+2,3,0.2423575483262539,Rushden Historic Transport Society,Yr Ieuan Ap Iago,0.011387135833501816
+2,4,0.2894035279750824,Rushden Historic Transport Society,Hostel of God Begot,0.16246968507766724
+3,0,0.24970396980643272,Yr Ieuan Ap Iago,Evans & Peel Detective Agency,-0.00013273581862449646
+3,1,0.25824301689863205,Yr Ieuan Ap Iago,Melton Mowbray & District Indoor Bowls Club,0.038599975407123566
+3,2,0.2423575483262539,Yr Ieuan Ap Iago,Rushden Historic Transport Society,0.011387135833501816
+3,3,1.0,Yr Ieuan Ap Iago,Yr Ieuan Ap Iago,1.0
+3,4,0.3082282468676567,Yr Ieuan Ap Iago,Hostel of God Begot,0.19375741481781006
+4,0,0.2857041507959366,Hostel of God Begot,Evans & Peel Detective Agency,0.13986696302890778
+4,1,0.3488463908433914,Hostel of God Begot,Melton Mowbray & District Indoor Bowls Club,0.17639490962028503
+4,2,0.2894035279750824,Hostel of God Begot,Rushden Historic Transport Society,0.16246968507766724
+4,3,0.3082282468676567,Hostel of God Begot,Yr Ieuan Ap Iago,0.19375741481781006
+4,4,1.0,Hostel of God Begot,Hostel of God Begot,1.0
